@@ -1,0 +1,49 @@
+
+.details{
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 2px solid black;
+    height: 52em;
+   
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2), 0 15px 15px 0 rgba(0, 0, 0, 0.24);
+
+}
+#detail{
+   
+}
+#p1{
+    display: flex;
+    flex: 2;
+    background-color: beige;
+}
+#p2{
+    background-color: rgb(209, 209, 203);
+    flex: 0.5;
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+}
+.image{
+    justify-content: center;
+    display: flex;
+    flex: 1;
+    background-color: #D9D9D9;
+}
+.desc{
+    /* display: flex;
+   flex-direction: column;
+   justify-content: center; */
+    flex: 1;
+    background-color: rgb(211, 203, 219);
+}
+#df input{
+    width: 3em;
+    margin-right: 0%;
+}
+#df button{
+    width: 2em;
+    height: 2em;
+}

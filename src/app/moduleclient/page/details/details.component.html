@@ -1,1 +1,28 @@
-<p>details works!</p>
+<div class=" details ">
+    <div class="detail container">
+        <div id="p1">
+            <div class="image">
+                <img src="assets/img/b6.png" alt="">
+            </div>
+            <div class="desc">
+            <h3>Nom : Burger Simple</h3>
+            <h3>Prix : 1500 FCFA</h3>
+            <h3>Description :</h3>
+            <p></p>
+
+            </div>
+        </div>
+        <div id="p2">
+            <div>
+                <button style="background-color:#5C3737;" type="button" class="btn ">Ajouter dans le panier <i class="fa-solid fa-cart-shopping"></i></button>
+            </div>
+            
+            <div id="df" class="def-number-input number-input safari_only">
+                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus">-</button>
+                <input class="quantity" min="0" name="quantity" value="1" type="number">
+                <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus">+</button>
+            </div>
+        </div>
+    </div>
+    <app-autreprodui></app-autreprodui>
+</div>
