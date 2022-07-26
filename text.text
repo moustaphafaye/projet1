@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <!-- Blog entries-->
+        <div class="col-lg-10">
+            <!-- Featured blog post-->
+            <div class="row">
+                <div class="card mb-4">
+                    <a href="#!"><img class="card-img-top col-lg-5" src="https://dummyimage.com/850x350/dee2e6/6c757d.jpg" alt="..." /></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    
+                </div>
+            </div>
+            <!-- Nested row for non-featured blog posts-->
+                   
+            <!-- Pagination-->
+            
+        </div>
+        <!-- Side widgets-->
+        <div class="col-lg-4">
+            
+        </div>
+        
+    </div>
+    
+</div>

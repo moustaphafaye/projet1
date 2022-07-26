@@ -1,0 +1,9 @@
+#card{
+    background-color: darkgrey;
+}
+.cardcentre{
+    background-color: beige;
+    width: 20em;
+    margin: 2px;
+    margin-top: 2em ;
+}
