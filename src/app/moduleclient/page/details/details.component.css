@@ -10,9 +10,6 @@
     box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2), 0 15px 15px 0 rgba(0, 0, 0, 0.24);
 
 }
-#detail{
-   
-}
 #p1{
     display: flex;
     flex: 2;
@@ -38,12 +35,4 @@
    justify-content: center; */
     flex: 1;
     background-color: rgb(211, 203, 219);
-}
-#df input{
-    width: 3em;
-    margin-right: 0%;
-}
-#df button{
-    width: 2em;
-    height: 2em;
 }

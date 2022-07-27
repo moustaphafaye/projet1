@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
@@ -18,6 +19,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     RouterModule,
     AppRoutingModule,
     LayoutModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

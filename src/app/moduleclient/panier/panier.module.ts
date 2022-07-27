@@ -4,12 +4,15 @@ import { PanierComponent } from './panier.component';
 
 
 
+
 @NgModule({
   declarations: [
-    PanierComponent
+    PanierComponent,
+   
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    
   ]
 })
 export class PanierModule { }

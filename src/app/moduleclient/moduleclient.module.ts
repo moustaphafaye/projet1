@@ -24,6 +24,7 @@ import { PanierModule } from './panier/panier.module';
     DetailsComponent,
     AsideComponent,
     AutreproduiComponent,
+    
    
   ],
   imports: [
