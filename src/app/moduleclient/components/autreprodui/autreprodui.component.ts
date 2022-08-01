@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { DetailMenu } from 'src/app/shared/models/detailsMenu';
 
 @Component({
   selector: 'app-autreprodui',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./autreprodui.component.css']
 })
 export class AutreproduiComponent implements OnInit {
+  @Input('produits') posts : DetailMenu|null = null;
 
   constructor() { }
 

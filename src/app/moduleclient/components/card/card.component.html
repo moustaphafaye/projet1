@@ -1,6 +1,6 @@
 <div class="cardcentre ">
-    <a href="#!"><img style="height: 15em;" class="card-img-top" [src]="post?.image" alt="..." /></a>
-    <div class="text-center"> <h2>{{post?.titre }}</h2></div>
+    <img style="height: 15em;" class="card-img-top " src="data:image/png;base64,{{post?.image}}" alt="..." />
+    <div class="text-center"> <p>{{post?.nom}}</p></div>
     <div id="card" class="card-body">
         <div class="small text-muted d-flex justify-content-between" >
             <a class="text-decoration-none btn btn-primary" href=""> <h2 class="card-title h5">Commander</h2></a>

@@ -5,7 +5,58 @@
 
 
 
+<ng-container *ngFor="let post of posts$|async">
+                    <app-card [posts]="post"></app-card>
+                </ng-container> 
 
+
+
+
+<div class=" details ">
+    <div class="detail container">
+        <div id="p1">
+            <div class="image W-25">
+                <img src="assets/img/b6.png" alt="">
+            </div>
+            <div class="desc">
+            <h3>Nom :  </h3>
+            <h3>Prix : 1500 FCFA</h3>
+            <h3>Description :</h3>
+            <p></p>
+
+            </div>
+        </div>
+        <div id="p2">
+            <div>
+                <button style="background-color:#5C3737;" type="button" class="btn ">Ajouter dans le panier <i class="fa-solid fa-cart-shopping"></i></button>
+            </div>
+            
+          
+        </div>
+    </div>
+    <app-autreprodui></app-autreprodui>
+</div>
+
+
+
+
+
+
+
+*ngIf="prod?.type=='menu'"
+
+
+
+
+
+
+
+
+
+
+
+
+this.posts$ = this.serv.all();
 
 
 <footer class="text-center text-white mt-5" style="background-color: #caced1;">
@@ -129,3 +180,104 @@
     </div>
     <!-- Copyright -->
   </footer>
+
+const id:number=+this.route.snapshot.params['id'];
+    this.serv.getProduit(id).subscribe(
+      data=>{
+        this.details=data;
+        console.log(this.details);
+      }
+    )
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class=" details ">
+    <div class="details container">
+        <div id="p1">
+            <div class="card" style="width: 18rem; height:30em">
+                <img class="card-img-top" src="assets/img/b6.png" alt="Card image cap">
+              </div>
+            <div style="overflow-y: scroll;" class="desc">
+                <table style="height: 10em;" class="table table-striped border ">
+                    <thead>
+                      <tr>
+        
+                        <th scope="col">Image</th>
+                        <th scope="col">NomProduit</th>
+                        <th scope="col">Quantite</th>
+                        <th scope="col">Prix Unitaire</th>
+                        <th scope="col">Prix Total</th>
+                        <th scope="col">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr >
+                        
+                        <th class="border border-right-3 d-flex justify-content-center" scope="row text-center"><img class="  " style="height: 5em; width:6em" src="assets/img/b6.png" alt=""></th>
+                        <td >Burger Royal</td>
+                        <td><a class="">-</a> 2 <a class="">+</a></td>
+                        <td>1000</td>
+                        <td>2000</td>
+                        <td>details</td>
+                      </tr>
+                      <tr>
+                        
+                        <th class="border border-right-3 d-flex justify-content-center" scope="row"><img class="" style="height: 5em; width:6em " src="assets/img/b6.png" alt=""></th>
+                        <td class="">Burger simple</td>
+                        <td></td>
+                        <td>1000</td>
+                        <td>4000</td>
+                        <td>details</td>
+        
+                      </tr>
+                      <tr>
+                        
+                        <th class="border border-right-3 d-flex justify-content-center" scope="row"><img class="" style="height: 5em; width:6em " src="assets/img/b6.png" alt=""></th>
+                        <td class="">Burger simple</td>
+                        <td></td>
+                        <td>1000</td>
+                        <td>4000</td>
+                        <td>details</td>
+        
+                      </tr>
+                      <tr>
+                        
+                        <th class="border border-right-3 d-flex justify-content-center" scope="row"><img class="" style="height: 5em; width:6em " src="assets/img/b6.png" alt=""></th>
+                        <td class="">Burger simple</td>
+                        <td>
+                            <div id="df" class="def-number-input number-input safari_only">
+                                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus ">-</button>
+                                <input class="quantity" min="0" name="quantity" value="1" type="number">
+                                <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus">+</button>
+                            </div>
+                            
+                        </td>
+                        <td>1000</td>
+                        <td>4000</td>
+                        <td>details</td>
+        
+                      </tr>
+                      
+                    </tbody>
+                </table>    
+            
+        </div>
+        <div id="p2">
+            <div>
+                <button style="background-color:#5C3737;" type="button" class="btn ">Ajouter dans le panier <i class="fa-solid fa-cart-shopping"></i></button>
+            </div>
+            
+          
+        </div>
+    </div>
+    <app-autreprodui></app-autreprodui>
+</div>

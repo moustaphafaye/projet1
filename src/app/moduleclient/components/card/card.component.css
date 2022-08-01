@@ -3,9 +3,15 @@
     height: 10em;
 }
 .cardcentre{
-    background-color: beige;
+    background-color: rgb(176, 176, 157);
     width: 20em;
     margin: 2px;
+    height: 27em;
     margin-top: 2em ;
+    border-radius: 2em; 
    
+}
+img{
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
 }

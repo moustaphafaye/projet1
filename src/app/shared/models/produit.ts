@@ -1,8 +1,8 @@
 export interface Produit {
     id:string
-    titre:string
-    image:string
-    date:string
-    categories?: Array<string>
+    nom:string
+    image?:Blob
+    prix?:number
     description:string
+    type?:string
 }

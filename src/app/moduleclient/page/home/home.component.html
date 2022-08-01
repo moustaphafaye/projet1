@@ -1,36 +1,23 @@
-<header >
+<header>
     <div class="header1">
         <div class=" my-2">
             <input type="text" placeholder="Recherche">
         </div>
-        <div class="catalogue">
-            <select name="" id="selectt">
-                <option  value=""disabled >filter</option>
-                <option value="">Burger</option>
-                <option value="">Menu</option>
-            </select>
+         <a (click)="infor('catalogue')" style="color: rgb(13, 12, 12);" class="text-decoration-none " ><h3>Catalogue</h3></a>
+        <div class=" w-25 border border-2 d-flex justify-content-around  catalogue">
+            <a (click)="infor('burger')"  class="text-decoration-none"  > <h3 style="color: rgb(13, 12, 12);"> Burger</h3></a>
+            <a (click)="infor('menu')" class="text-decoration-none" > <h3 style="color: rgb(13, 12, 12);"> Menu</h3></a>
         </div>
     </div>
 </header>
 <app-publicite></app-publicite>
-<div  class="d-flex flex-wrap container mt-3  " *ngFor="let post of posts$|async">
-                    <app-card [posts]="post"></app-card> 
-                    
+<div class="containers  ">
+    <div  class="d-flex flex-wrap container mt-3 mb-3" >
+        <ng-container   *ngFor="let post of produits">
+            <app-card [posts]="post"></app-card>
+        </ng-container>
+        
+    </div>
+    
+    
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

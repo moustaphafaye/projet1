@@ -1,0 +1,129 @@
+<div class="container border -3">
+    <h2 class="df" *ngIf="prod?.type=='menu'" >{{prodd?.nom}}</h2>
+    <div class="detail d-flex">
+        <img style="height: 20em;" src="data:image/png;base64,{{prod.image}}" alt="">
+            <div id="vb" class="border border-2">
+                
+                <div  class="cs" >
+                    <!-- modifier la taille de la classe c -->
+                      <ng-container *ngFor="let item of prodd?.menuburger">
+                        <div id="cvde" class="card m-2 "  >
+                            <table class="table table-striped ">
+                                <thead>
+                                  <tr>
+                        
+                                    <th scope="col">Image</th>
+                                    <th scope="col">NomProduit</th>
+                                    <th scope="col">Quantite</th>
+                                    <th scope="col">Prix </th>
+                                   
+                                    <th scope="col">Action</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr >
+                                    
+                                    <th class="border border-right-3 d-flex justify-content-center" scope="row text-center"><img class="  " style="height: 4em; width:3em" src="assets/img/b6.png" alt=""></th>
+                                    <td >  {{prodd?.menuburger}}</td>
+                                    <td>                        <app-quantite></app-quantite>
+                                    </td>
+                                    <td>1000</td>
+                                    
+                                    <td> <a class="text-decoration-none" href="">Details</a> </td>
+                                  </tr>
+                                  <tr>
+                                                        
+                                </tbody>
+                            </table>
+                            <!--<img id="image"  src="assets/img/sprite.png" class="card-img-top" alt="...">--> 
+                        </div>
+                    
+                </ng-container>   
+                </div>
+            </div>
+        
+        
+
+    </div>
+    <div class="btne mt-2">
+        <app-quantite></app-quantite>
+        <button type="button" class="bb btn btn-primary">Ajouter dans <i class="fa-solid fa-cart-shopping"></i></button>
+    </div>
+    <div class="complements">
+        <a href="" class="btn btn-secondary m-4">boisson</a>
+        <a href="" class="btn btn-secondary">frites</a>
+        
+        <h5 class="">Voici les complements disponible pour votre commande:</h5>
+        
+        <!-- <div class="img">
+            <img src="assets/images/boisson.png" alt="" class="im">
+            <img src="assets/images/bB.png" alt="" class="im">
+            <img src="assets/images/fd.png" alt="" class="im">
+            <img src="assets/images/sprite.png" alt="" class="im">
+            <img src="assets/images/frites.png" alt="" class="im">
+             <img src="assets/images/frites.png" alt="..." class="img-thumbnail "> 
+        </div> -->
+    <div class="d-flex ">
+        <div  class="c  border border-2 ">
+        <!-- modifier la taille de la classe c -->
+        <ng-container *ngFor="let comp of complement">
+                <div id="cvd" class="card m-2 bg-danger" >
+                    
+                    <app-quantite></app-quantite>
+                    <img id="image"  src="data:image/png;base64,{{complement}}" class="card-img-top" alt="...">
+                </div>
+            </ng-container>    
+                
+              
+              
+              
+        </div>
+        <div  class="c  border border-2">
+    
+            <div id="cvd" class="card m-2 bg-danger" >
+                <app-quantite></app-quantite>
+                <img id="image"  src="assets/img/porrtioon.jpg" class="card-img-top" alt="...">
+              </div>
+              <div id="cvd" class="card m-2 bg-danger" >
+                <app-quantite></app-quantite>
+                <img id="image"  src="assets/img/portion.png" class="card-img-top" alt="...">
+              </div><div id="cvd" class="card m-2 bg-danger" >
+                <app-quantite></app-quantite>
+                <img id="image"  src="assets/img/porttio.png" class="card-img-top" alt="...">
+              </div>
+              
+              
+              
+              
+        </div>
+        <div >
+            <div   class="cc d-flex justify-content-around flex-wrap  border border-2">
+               
+                <div id="cvc" class="card m-2 bg-danger" >
+                    <app-quantite></app-quantite>
+                    <img id="image"  src="assets/img/porttio.png" class="card-img-top" alt="...">
+                  </div>
+                  <div id="cvc" class="card m-2 bg-danger" >
+                    <app-quantite></app-quantite>
+                    <img id="image"  src="assets/img/porttio.png" class="card-img-top" alt="...">
+                  </div>
+                  <div id="cvc" class="card m-2 bg-danger" >
+                    <app-quantite></app-quantite>
+                    <img id="image"  src="assets/img/porttio.png" class="card-img-top" alt="...">
+                  </div>
+                  <div id="cvc" class="card m-2 bg-danger" >
+                    <app-quantite></app-quantite>
+                    <img id="image"  src="assets/img/porttio.png" class="card-img-top" alt="...">
+                  </div>
+                  <div id="cvc" class="card m-2 bg-danger" >
+                    <app-quantite></app-quantite>
+                    <img id="image"  src="assets/img/porttio.png" class="card-img-top" alt="...">
+                  </div>
+                
+            </div>
+        </div>
+    </div>
+    </div>
+    
+    
+</div>

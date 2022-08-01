@@ -13,6 +13,11 @@ import { DetailsComponent } from './page/details/details.component';
 import { AsideComponent } from './components/aside/aside.component';
 import { AutreproduiComponent } from './components/autreprodui/autreprodui.component';
 import { PanierModule } from './panier/panier.module';
+import { QuantiteComponent } from './components/quantite/quantite.component';
+import { DetailsmenuComponent } from './page/detailsmenu/detailsmenu.component';
+import { DetailsburgerComponent } from './page/detailsburger/detailsburger.component';
+import { ListComponent } from './page/list/list.component';
+
 
 
 @NgModule({
@@ -24,8 +29,10 @@ import { PanierModule } from './panier/panier.module';
     DetailsComponent,
     AsideComponent,
     AutreproduiComponent,
-    
-   
+    QuantiteComponent,
+    DetailsmenuComponent,
+    DetailsburgerComponent,
+    ListComponent
   ],
   imports: [
     CommonModule,

@@ -7,7 +7,7 @@
     background-color: aqua;
 }
 .jumbotron{
-    background-image: url(/assets/img/b6.png);
+    /* background-image: url(/assets/img/b6.png); */
     background-repeat: no-repeat;
     background-size: cover;
 

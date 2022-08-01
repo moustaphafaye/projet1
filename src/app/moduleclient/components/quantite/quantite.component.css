@@ -1,8 +1,10 @@
 #df input{
-    width: 3em;
+    width: 4em;
     margin-right: 0%;
 }
 #df button{
     width: 2em;
+    margin: 4px;
+    border: none;
     height: 2em;
 }

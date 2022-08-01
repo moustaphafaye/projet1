@@ -1,24 +1,9 @@
-<div class=" details ">
-    <div class="detail container">
-        <div id="p1">
-            <div class="image">
-                <img src="assets/img/b6.png" alt="">
-            </div>
-            <div class="desc">
-            <h3>Nom : Burger Simple</h3>
-            <h3>Prix : 1500 FCFA</h3>
-            <h3>Description :</h3>
-            <p></p>
 
-            </div>
-        </div>
-        <div id="p2">
-            <div>
-                <button style="background-color:#5C3737;" type="button" class="btn ">Ajouter dans le panier <i class="fa-solid fa-cart-shopping"></i></button>
-            </div>
-            
-          
-        </div>
-    </div>
-    <app-autreprodui></app-autreprodui>
-</div>
+<ng-container *ngIf="prod?.type=='burger'">
+    <app-detailsburger></app-detailsburger>
+
+</ng-container>
+
+<ng-container *ngIf="prod?.type=='menu'">
+  <app-detailsmenu></app-detailsmenu>
+</ng-container>

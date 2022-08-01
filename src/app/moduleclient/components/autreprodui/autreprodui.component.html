@@ -1,32 +1,30 @@
-<div class="container d-flex mt-3 border border-3">
-    
-    <div class="card m-2" style="width: 12rem">
-        <button class="btn ">+</button>
-        <img src="assets/img/pressea-fresh-tropical-gm-removebg-preview.png" class="card-img-top" alt="...">
-      </div>
-      <div class="card m-2" style="width: 12rem">
-        <button class="btn ">+</button>
-        <img src="assets/img/sprite_1.5_ltr-removebg-preview.png" class="card-img-top" alt="...">
-      </div>
-      <div class="card m-2" style="width: 12rem">
-        <button class="btn ">+</button>
-        <img src="assets/img/une-canette-de-boisson-gazeuse-soda-fanta-orange-photographie-sur-un-fond-blanc-ky4xn3-removebg-preview.png" class="card-img-top" alt="...">
-      </div>
-      <div class="card m-2" style="width: 12rem">
-        <button class="btn ">+</button>
-        <img src="assets/img/téléchargement (1).jpeg" class="card-img-top" alt="...">
-      </div>
-      <div class="card m-2" style="width: 12rem">
-        <button class="btn ">+</button>
-        <img src="assets/img/téléchargement (1).jpeg" class="card-img-top" alt="...">
-      </div>
-      <div class="card m-2" style="width: 12rem">
-        <button class="btn ">+</button>
-        <img src="assets/img/téléchargement (1).jpeg" class="card-img-top" alt="...">
-      </div>
-      <div class="card m-2" style="width: 12rem">
-        <button class="btn ">+</button>
-        <img src="assets/img/sprite.png" class="card-img-top" alt="...">
-      </div>
-      
+<div id="cvde" class="card m-2 "  >
+    <table class="table table-striped ">
+        <thead>
+          <tr>
+
+            <th scope="col">Image</th>
+            <th scope="col">NomProduit</th>
+            <th scope="col">Quantite</th>
+            <th scope="col">Prix </th>
+           
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr >
+            
+            <th class="border border-right-3 d-flex justify-content-center" scope="row text-center"><img class="  " style="height: 4em; width:3em" src="assets/img/b6.png" alt=""></th>
+            <td >{{posts?.nom}}</td>
+            <td>                        <app-quantite></app-quantite>
+            </td>
+            <td>1000</td>
+            
+            <td> <a class="text-decoration-none" href="">Details</a> </td>
+          </tr>
+          <tr>
+                                
+        </tbody>
+    </table>
+    <!--<img id="image"  src="assets/img/sprite.png" class="card-img-top" alt="...">--> 
 </div>
