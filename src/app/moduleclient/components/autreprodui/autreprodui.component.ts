@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { burgermenu } from 'src/app/shared/models/detail';
 import { DetailMenu } from 'src/app/shared/models/detailsMenu';
 
 @Component({
@@ -7,7 +8,7 @@ import { DetailMenu } from 'src/app/shared/models/detailsMenu';
   styleUrls: ['./autreprodui.component.css']
 })
 export class AutreproduiComponent implements OnInit {
-  @Input('produits') posts : DetailMenu|null = null;
+  @Input() menuburger: burgermenu[] | undefined = undefined
 
   constructor() { }
 

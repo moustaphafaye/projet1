@@ -1,10 +1,11 @@
 <div class="container border -3">
-    <h2 class="df" *ngIf="prod?.type=='menu'" >{{prodd?.nom}}</h2>
+    <h2 class="df"  ></h2>*
+    <--!ngIf="prod?.type=='menu'"  prodd?.nom-->
     <div class="detail d-flex">
-        <img style="height: 20em;" src="data:image/png;base64,{{prod.image}}" alt="">
+        <img style="height: 20em;" src="data:image/png;base64," alt="">
             <div id="vb" class="border border-2">
                 
-                <div  class="cs" >
+                <div  class="cs" {{menu.nom}}>
                     <!-- modifier la taille de la classe c -->
                       <ng-container *ngFor="let item of prodd?.menuburger">
                         <div id="cvde" class="card m-2 "  >

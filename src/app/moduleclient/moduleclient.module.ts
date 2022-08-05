@@ -17,6 +17,12 @@ import { QuantiteComponent } from './components/quantite/quantite.component';
 import { DetailsmenuComponent } from './page/detailsmenu/detailsmenu.component';
 import { DetailsburgerComponent } from './page/detailsburger/detailsburger.component';
 import { ListComponent } from './page/list/list.component';
+import { TailleComponent } from './components/taille/taille.component';
+import { TailleboiComponent } from './components/tailleboi/tailleboi.component';
+import { BoissonComponent } from './components/boisson/boisson.component';
+import { BoissonmenuComponent } from './components/boissonmenu/boissonmenu.component';
+import { MenutailComponent } from './components/menutail/menutail.component';
+import { MenutaillesComponent } from './components/menutailles/menutailles.component';
 
 
 
@@ -32,7 +38,13 @@ import { ListComponent } from './page/list/list.component';
     QuantiteComponent,
     DetailsmenuComponent,
     DetailsburgerComponent,
-    ListComponent
+    ListComponent,
+    TailleComponent,
+    TailleboiComponent,
+    BoissonComponent,
+    BoissonmenuComponent,
+    MenutailComponent,
+    MenutaillesComponent
   ],
   imports: [
     CommonModule,

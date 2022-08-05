@@ -5,6 +5,7 @@ import { Catalogue } from '../models/catalogue';
 import { Produit } from '../models/produit';
 import { Complement } from '../models/complement';
 import { DetailMenu } from '../models/detailsMenu';
+import { Detail } from '../models/detail';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,8 @@ export class ProduitService {
 
 
   private url:string = "http://localhost:8000/api/catalogue"
-  private urle:string = "http://localhost:8000/api/produits"
+  private urlp:string = "http://localhost:8000/api/produits"
+  private urld:string = "http://localhost:8000/api/details"
   private urlmenu:string = "http://localhost:8000/api/menus"
   private compl:string = "http://localhost:8000/api/complement"
 
@@ -42,11 +44,15 @@ export class ProduitService {
     )
   }
   getProduit=(id: number)=>  {
-    return this.http.get<Produit>(`${this.urle}/${id}`)
+    return this.http.get<Detail>(`${this.urld}/${id}`).pipe(
+      map(
+        data=>{
+          return data
+        }
+      )
+    )
   }
-  getMenu=(id: number)=>  {
-    return this.http.get<DetailMenu>(`${this.urlmenu}/${id}`)
-  }
+  
 //   post$ = (id:number) => {
 //     return this.http.get<Catalogue>(`${this.url}/${id}`)
 //   }

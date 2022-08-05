@@ -1,0 +1,11 @@
+
+
+<!--<app-taille *ngIf="(Taille?.tailleboisson) as taille" [boissont]="taille"></app-taille>-->
+<ng-container *ngFor="let frit of menufritee">
+        <div id="cvd" class="card m-2 bg-red" >
+            <h5>{{frit?.portionFrite?.prix}} FCFA</h5>
+            <app-quantite></app-quantite>
+            <img id="image" style="width: 5em;"  src="data:image/png;base64,{{frit?.portionFrite?.image}}" class="card-img-top" alt="..cc.">
+        </div>
+      </ng-container>
+     

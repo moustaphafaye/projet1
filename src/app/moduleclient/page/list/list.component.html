@@ -1,41 +1,11 @@
-<div id="vb" class="border border-2">
-                
-    <div  class="cs">
-        <!-- modifier la taille de la classe c -->
-        <div id="cvde" class="card m-2 " >
-            <table class="table table-striped ">
-                <thead>
-                  <tr>
-    
-                    <th scope="col">Image</th>
-                    <th scope="col">NomProduit</th>
-                    <th scope="col">Quantite</th>
-                    <th scope="col">Prix </th>
-                   
-                    <th scope="col">Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr >
-                    
-                    <th class="border border-right-3 d-flex justify-content-center" scope="row text-center"><img class="  " style="height: 4em; width:3em" src="assets/img/b6.png" alt=""></th>
-                    <td >Burger Royal</td>
-                    <td>                        <app-quantite></app-quantite>
-                    </td>
-                    <td>1000</td>
-                    
-                    <td> <a class="text-decoration-none" href="">Details</a> </td>
-                  </tr>
-                  <tr>
-                                        
-                </tbody>
-            </table>
-            <!--<img id="image"  src="assets/img/sprite.png" class="card-img-top" alt="...">--> 
-        </div>  
-        
-        
-        
-         
-              
-    </div>
+<div  class="d-flex justify-content-around flex-wrap " >
+  <ng-container *ngFor="let portion of Produitd">
+<div id="cvdy" class="card m-2 bg-red" >
+  <h5 class="text-center">{{portion?.prix}} FCFA</h5>
+  <app-quantite></app-quantite>
+  <img id="image" style="width: 10em; height:10em"  src="data:image/png;base64,{{portion?.image}}" class="card-img-top" alt="...">
+  <h5>{{portion?.nom}}</h5>
 </div>
+</ng-container>
+</div>
+

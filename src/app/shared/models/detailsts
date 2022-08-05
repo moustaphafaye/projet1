@@ -1,7 +1,0 @@
-export interface Detail {
-    id:string
-    nom:string
-    image:Blob
-    prix:number
-    description:string
-}

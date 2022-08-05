@@ -1,9 +1,137 @@
+<!--{{(details?.Taille?.[0]?.tailleboisson?.[0]?.boisson?.image)}}-->
 
-<ng-container *ngIf="prod?.type=='burger'">
-    <app-detailsburger></app-detailsburger>
+<div class="container gb border -3">
+  <h2 class="df"  >{{(details?.menu?.nom)}}</h2>
+  
+  <div class="detail d-flex" >
+   <ng-container *ngIf="details?.menu?.type=='menu'">
+    <img class="image border border-2" style="height: 20em;" src="data:image/png;base64,{{(details?.menu?.image)}}" alt="">
+  </ng-container>
+  <ng-container *ngIf="details?.burger?.type=='burger'">
+    <img class="image" style="height: 20em;" src="data:image/png;base64,{{(details?.burger?.image)}}" alt="">
+  </ng-container>
 
-</ng-container>
+  <ng-container *ngIf="details?.menu?.type=='menu'">
 
-<ng-container *ngIf="prod?.type=='menu'">
-  <app-detailsmenu></app-detailsmenu>
-</ng-container>
+
+      <div  class="titre border- border-2">
+        <h5 class="df">Prix:  {{details?.menu?.prix}} FCFA</h5>  
+        <h5 class="df">Description :</h5>
+        
+          <p class="df ">{{details?.menu?.description}}</p>
+        
+        
+        
+      </div>
+
+  </ng-container>
+      
+  
+          <div style="border: 1px solid rgb(18, 13, 13);" id="vb" class="">
+            
+              <div  class="cs" >
+                  
+                    <ng-container *ngIf="details?.menu?.type=='menu'" >
+                      
+                      <app-autreprodui *ngIf="(details?.menu?.menuburger) as item" [menuburger]="item"></app-autreprodui>
+                   
+                  
+              </ng-container> 
+              
+              
+              <ng-container *ngIf="details?.burger?.type=='burger'">
+                <div class="detail d-flex">
+                 
+                      <div id="vb" >
+                          <h3 class="mt-3">Nom:  {{details?.burger?.nom}} </h3>
+                          <h3 class="mt-3">Prix:  {{details?.burger?.prix}}  FCFA </h3>
+                          <h3 class="mt-3">Description :</h3> <p style="font-size: 1.4em;margin-left:10px">{{details?.burger?.description}}</p> 
+                  
+                      </div>
+                  
+                  
+          
+              </div>
+              </ng-container>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              </div>
+          </div>
+      
+      
+
+  </div>
+  <div class="btne mt-2">
+      <app-quantite></app-quantite>
+      <button type="button" class="bb btn btn-primary">Ajouter dans <i class="fa-solid fa-cart-shopping"></i></button>
+  </div>
+  <div class="complements mt-2 ">
+      <button class="btn btn-secondary">Frites du Menu</button>
+      <button style="margin-left: 30em;" class="btn btn-secondary ">Boisson du Menu</button>
+      
+     
+     
+  <div style="border: 1px solid rgb(18, 16, 16);" class="d-flex ">
+    <ng-container *ngIf="details?.menu?.type=='menu'">
+      <div  class="c  border border-2 ">
+    
+          <app-tailleboi *ngIf="(details?.menu?.menuportionfriet) as frit" [menufritee]="frit"></app-tailleboi>
+                    
+      </div>
+    </ng-container>
+     <!-- <div  class="c  border border-2">
+        <ng-container *ngFor="let portion of details?.frite"> 
+          <div id="cvd" class="card m-2 bg-danger" >cc
+              <app-quantite></app-quantite>
+              <img id="image"  src="assets/img/porrtioon.jpg" class="card-img-top" alt="...">
+            </div>
+          </ng-container>    
+      </div>-->
+      <div >
+        <ng-container *ngIf="details?.menu?.type=='menu'" >
+          <div   class="cc d-flex justify-content-around flex-wrap  border border-2">
+            <ng-container *ngFor="let menutai of details?.menu?.menutaille">
+              
+              <app-boissonmenu [menutai]="menutai"></app-boissonmenu>
+
+              
+              </ng-container>
+          </div>
+        
+        </ng-container>
+      </div>
+  </div>
+  </div>
+  <h5 class="">Voici les complements disponible pour votre commande:</h5>      
+  <div id="vbc" class="border border-2">
+    <div  class="d-flex justify-content-around flex-wrap cs" >
+      
+        <!-- modifier la taille de la classe c -->
+        <!--<ng-container *ngFor="let comp of details?.Taille">
+            <ng-container *ngFor="let compe of details?.frite">-->
+              <app-list *ngIf="(details?.frite) as portion" [Produitd]="portion"></app-list>
+
+              <ng-container *ngFor="let taille of details?.Taillee">
+                <app-taille [taille]="taille"></app-taille>
+              </ng-container>
+    </div>
+  </div>
+  
+</div>
