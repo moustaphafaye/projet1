@@ -7,6 +7,8 @@ import { Produit } from 'src/app/shared/models/produit';
 import { Complement } from 'src/app/shared/models/complement';
 import { DetailMenu } from 'src/app/shared/models/detailsMenu';
 import { BoissonTaille, Detail, Produitd, TailleBoisson } from 'src/app/shared/models/detail';
+import { PanierService } from 'src/app/shared/services/panier.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-details',
@@ -21,8 +23,9 @@ export class DetailsComponent implements OnInit {
   complement: Produit[]|undefined=undefined  
 
   activeRoute: any;
+  first: any;
   
-  constructor( private mba:ProduitService, private route:ActivatedRoute) { }
+  constructor( private mba:ProduitService, private route:ActivatedRoute,private detail:PanierService,private toastrservic:ToastrService) { }
   details : Detail | null = null 
   produits: Produitd |undefined=undefined  
   portionfri: Produitd |undefined=undefined  
@@ -36,10 +39,22 @@ export class DetailsComponent implements OnInit {
      this.mba.getProduit(id).subscribe(
         (data)=> {
           this.details = data
-          console.log(this.details)
+          // console.log(this.details)
         }
     )
    
   
   }
+  product(koni:any){
+    this.detail.addToCart(koni)
+}
+  changeFn(abc:any) {
+    let  first :any;
+     first = abc.target.value;
+     console.log(first)
+    
+   }
+   successMessage(){
+    this.toastrservic.success("Ajout avec success")
+   }
 }

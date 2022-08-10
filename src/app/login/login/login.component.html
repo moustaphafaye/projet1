@@ -1,0 +1,20 @@
+<div class="container mt-4 ">
+    <div class="col-md-6 offset-md-3 ">
+        <div class="card">
+            <div class="card-header text-center"><h3>Authentification</h3></div>
+            <div class="card-body">
+                <form [formGroup]="userFormGroup" (ngSubmit)="handerlogin()">
+                    <div class="mb-4">
+                        <label class="form-label text-danger h5">Login</label>
+                        <input type="text" formControlName="login" class="form-control ">
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label text-danger h5">Password</label>
+                        <input type="password" formControlName="password" class="form-control ">
+                    </div>
+                    <button class="h5 btn btn-primary  mb-3  " type="submit">Connexion</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

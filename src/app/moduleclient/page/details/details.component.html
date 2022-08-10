@@ -35,7 +35,7 @@
                       
                       <app-autreprodui *ngIf="(details?.menu?.menuburger) as item" [menuburger]="item"></app-autreprodui>
                    
-                  
+                      <h4 >Prix:  {{details?.menu?.prix}} FCFA</h4>
               </ng-container> 
               
               
@@ -79,8 +79,13 @@
 
   </div>
   <div class="btne mt-2">
-      <app-quantite></app-quantite>
-      <button type="button" class="bb btn btn-primary">Ajouter dans <i class="fa-solid fa-cart-shopping"></i></button>
+      <div id="df" class="def-number-input number-input safari_only">
+    <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus ">-</button>
+    
+    <input (change)="changeFn($event)" class="quantity text-center" min="1"  name="quantity" value="1" type="number">
+    <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus">+</button>
+</div>
+      <button type="button"(click)="product(details?.burger);product(details?.menu);successMessage()" class="bb btn btn-primary">Ajouter dans <i class="fa-solid fa-cart-shopping"></i></button>
   </div>
   <div class="complements mt-2 ">
       <button class="btn btn-secondary">Frites du Menu</button>

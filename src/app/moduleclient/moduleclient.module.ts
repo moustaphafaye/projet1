@@ -14,8 +14,6 @@ import { AsideComponent } from './components/aside/aside.component';
 import { AutreproduiComponent } from './components/autreprodui/autreprodui.component';
 import { PanierModule } from './panier/panier.module';
 import { QuantiteComponent } from './components/quantite/quantite.component';
-import { DetailsmenuComponent } from './page/detailsmenu/detailsmenu.component';
-import { DetailsburgerComponent } from './page/detailsburger/detailsburger.component';
 import { ListComponent } from './page/list/list.component';
 import { TailleComponent } from './components/taille/taille.component';
 import { TailleboiComponent } from './components/tailleboi/tailleboi.component';
@@ -36,8 +34,6 @@ import { MenutaillesComponent } from './components/menutailles/menutailles.compo
     AsideComponent,
     AutreproduiComponent,
     QuantiteComponent,
-    DetailsmenuComponent,
-    DetailsburgerComponent,
     ListComponent,
     TailleComponent,
     TailleboiComponent,
@@ -51,6 +47,7 @@ import { MenutaillesComponent } from './components/menutailles/menutailles.compo
     ModuleclientRoutingModule,
     LayoutModule,
     RouterModule,
+    
     PanierModule,
   ],exports:[
     CardComponent

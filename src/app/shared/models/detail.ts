@@ -7,7 +7,7 @@ export interface Detail {
     burger:Produitd,
     menu:Menu,
     Taillee:TailleBoisson[],
-    frite:Produitd[]  
+    frite:Produitd[] 
 }
 
 
@@ -15,6 +15,7 @@ export interface Produitd {
     id:string
     nom:string
     image?:Blob
+    quantite?:number
     prix?:number
     description:string
     type?:string
@@ -37,6 +38,7 @@ export interface Menu {
     nom?:string
     prix?:number
     image?:Blob
+    quantite?:number
     description?:string
     type?:string
     menuburger?:burgermenu[]

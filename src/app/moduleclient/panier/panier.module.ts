@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PanierComponent } from './panier.component';
+import { ProduitpanierComponent } from './produitpanier/produitpanier.component';
 
 
 
@@ -8,7 +9,8 @@ import { PanierComponent } from './panier.component';
 @NgModule({
   declarations: [
     PanierComponent,
-   
+    ProduitpanierComponent,
+    
   ],
   imports: [
     CommonModule,

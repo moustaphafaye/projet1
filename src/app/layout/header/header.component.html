@@ -1,13 +1,20 @@
 <nav style="background-color: #5C3737;" class="navbar navbar-expand-lg   navbar  border border-2 cliss">
-    <div style="" class="container">
+    <div  class="container">
         <img style="height: 3em ;" src="assets/img/logoBurger.png" alt="vbb">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="d-flex justify-content-around collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item"><a class="nav-link" routerLink="/moduleclient/panier"><i class="fa-solid fa-cart-shopping"></i></a></li>
-                <li class="nav-item"><a class="nav-link" routerLink="/blog">S'inscrire</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/moduleclient/panier">
+                    <i  class="fa-solid fa-cart-shopping"></i>
+                    <span class="badge rounded-pill badge-notification bg-danger">
+                       {{(vale | async).length}} 
+                      </span>
+                    </a>    
+                 </li>
+                <li class="nav-item"><a class="nav-link" routerLink="">S'inscrire</a></li>
                 
-                <li class="nav-item"><a class="nav-link" href="#!">Connexion    <i class="fa-solid fa-user"></i></a></li>
+                <li class="nav-item"><a class="nav-link" href="#!"  routerLink="/moduleclient/login">Connexion    <i class="fa-solid fa-user"></i></a></li>
                 
             </ul>
             

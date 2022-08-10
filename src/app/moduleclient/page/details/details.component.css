@@ -24,6 +24,16 @@ i{
     width: 60%;
     height:70%;
 }
+#df input{
+    width: 4em;
+    margin-right: 0%;
+}
+#df button{
+    width: 2em;
+    margin: 4px;
+    border: none;
+    height: 2em;
+}
 .df{
     margin-left: 20%;
     color: rgb(12, 12, 12);

@@ -1,13 +1,21 @@
+<!--{{boissonTaille?.quantitetailleboissonstock|json}}-->
 <div  class="d-flex justify-content-around flex-wrap " >
     <div id="cvdy" class="card m-2 " >
       <h5 class="text-center">{{boissonTaille?.prixtaille}}FCFA </h5>
       <div id="df" class="def-number-input number-input safari_only">
-        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus ">-</button>
-        <input class="quantity text-center" min="0" name="quantity" value="" max="{{boissonTaille?.quantitetailleboissonstock}}" type="number">
-        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus">+</button>
+        <button (click)="changeFn($event,boissonTaille?.boisson?.id,boissonTaille?.quantitetailleboissonstock)" onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus ">-</button>
+        <input [id]=" 'number'+boissonTaille?.boisson?.id " (keyup)="recupVal($event)"  class="quantity text-center" min="1" name="quantity" value="1"  max="{{(boissonTaille?.quantitetailleboissonstock)}}" type="number">
+        
+        <button (click)="changeFn($event,boissonTaille?.boisson?.id,boissonTaille?.quantitetailleboissonstock)" onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus">+</button>
+        
     </div>
-      <img id="image" style="width: 10em; height:10em"  src="data:image/png;base64,{{boissonTaille?.boisson?.image}}" class="card-img-top" alt="...">
-      <h5>{{boissonTaille?.boisson?.nom}}FCFA</h5>
-    </div>
+    <img id="image" style="width: 10em; height:10em"  src="data:image/png;base64,{{boissonTaille?.boisson?.image}}" class="card-img-top" alt="...">
     
-  </div>
+    <span class="text-danger" [id]="'span'+boissonTaille?.boisson?.id"></span>
+    <h5>{{boissonTaille?.boisson?.nom}}FCFA</h5>
+</div>
+
+</div>
+
+
+  
