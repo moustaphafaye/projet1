@@ -15,7 +15,8 @@ export class ProduitpanierComponent implements OnInit {
 @Input() valeurpanier:any 
   constructor(private route:ActivatedRoute,private produitpanier:PanierService,private toastrservic:ToastrService,private zone:ProduitService) { }
   valeur$:Observable<any>= this.produitpanier.items$
-  zone$?:Zone |undefined=undefined
+   zone$: any | undefined
+   public valeurs=[]
   supprimer(product:Menu | Produitd){
     this.produitpanier.delete(product)
   }
@@ -35,6 +36,11 @@ export class ProduitpanierComponent implements OnInit {
     } 
     
  }
+ validercommande(){
+  // let obj{}
+ this.produitpanier.commande();
+  
+ }
  commande(){
   let commander=document.getElementById('zone')
    let commande=document.getElementById('commander')
@@ -52,11 +58,13 @@ export class ProduitpanierComponent implements OnInit {
  
 
   ngOnInit(): void {
-     this.zone.allzone().subscribe((data)=> {
-          this.zone$ = data
-           console.log()
-         
-           
+     this.produitpanier.allzone().subscribe((data)=> {
+          this.zone$= data
+          console.log();
+          
+          // this.valeurs=this.zone$
+           console.log(this.zone$);
+            
         }
     )
   }

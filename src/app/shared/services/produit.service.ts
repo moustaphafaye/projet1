@@ -14,7 +14,6 @@ export class ProduitService {
 
 
   private url:string = "http://localhost:8000/api/catalogue"
-  private urlz:string = "http://localhost:8000/api/zones"
   private urlp:string = "http://localhost:8000/api/produits"
   private urld:string = "http://localhost:8000/api/details"
   private urlmenu:string = "http://localhost:8000/api/menus"
@@ -44,13 +43,7 @@ export class ProduitService {
       })
     )
   }
-  allzone():Observable<Zone> {
-    return this.http.get<Zone>(this.urlz).pipe(
-      
-      map(data=>{
-        return data
-      }))
-    };
+  
 
 
 

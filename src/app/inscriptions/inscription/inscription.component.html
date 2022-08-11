@@ -1,0 +1,38 @@
+<div class="container mt-4 ">
+    <div class="col-md-6 offset-md-3 ">
+        <div class="card">
+            <div class="card-header text-center"><h3>Authentification</h3></div>
+            <div class="card-body">
+                <form [formGroup]="insFormGroup"  (ngSubmit)="handerins()">
+                    <div class="mb-4">
+                        <label class="form-label text-success h4">Nom</label>
+                        <input type="text" formControlName="nom" placeholder="enter votre non" class="form-control ">
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label text-success h4">Prenom</label>
+                        <input type="text" formControlName="prenom"placeholder="enter votre prenom" class="form-control ">
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label text-success h4">login</label>
+                        <input type="email" formControlName="login"placeholder="enter votre login" class="form-control ">
+                    </div><div class="mb-4">
+                        <label class="form-label text-success h4">Password</label>
+                        <input type="password" formControlName="password"placeholder="enter votre password" class="form-control ">
+                    </div><div class="mb-4">
+                        <label class="form-label text-success h4">Confirmer Password</label>
+                        <input type="password" formControlName="password"placeholder="confirmer" class="form-control ">
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label text-success h4">Telephone</label>
+                        <input type="number" formControlName="telephone"placeholder="enter votre telephone" class="form-control ">
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label text-success h4">Adresse</label>
+                        <input type="text" formControlName="adresse"placeholder="enter votre telephone" class="form-control ">
+                    </div>
+                    <button  class="h5 btn btn-primary  mb-3  " type="submit">S'inscrire</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

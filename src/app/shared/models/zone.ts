@@ -1,4 +1,10 @@
-export interface Zone{
+
+
+
+
+
+
+export interface Zone {
     format?:format
     "hydra:member"?:format[]
 

@@ -1,4 +1,5 @@
 import { Produitd } from "./detail"
+
 export interface Panier{
 
     commandeburger?:commandeburger[],
@@ -6,7 +7,7 @@ export interface Panier{
     commandefrite?:commandefrite[],
     commandetailleboisson?:commandetailleboisson[],
     zone?:zone,
-    quartier?:quartier
+    quartier?:quartier   
 
 }
 export interface commandeburger{

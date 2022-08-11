@@ -21,6 +21,9 @@ import { BoissonComponent } from './components/boisson/boisson.component';
 import { BoissonmenuComponent } from './components/boissonmenu/boissonmenu.component';
 import { MenutailComponent } from './components/menutail/menutail.component';
 import { MenutaillesComponent } from './components/menutailles/menutailles.component';
+import { LoginComponent } from '../login/login/login.component';
+import { LoginModule } from '../login/login.module';
+import { InscriptionsModule } from '../inscriptions/inscriptions.module';
 
 
 
@@ -47,7 +50,8 @@ import { MenutaillesComponent } from './components/menutailles/menutailles.compo
     ModuleclientRoutingModule,
     LayoutModule,
     RouterModule,
-    
+    LoginModule,
+    InscriptionsModule,
     PanierModule,
   ],exports:[
     CardComponent

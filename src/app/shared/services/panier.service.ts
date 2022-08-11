@@ -1,6 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, map ,Observable,take,find} from 'rxjs';
 import { Menu, Produitd } from '../models/detail';
+import { commandeburger, Panier } from '../models/panier';
 
 @Injectable({
   providedIn: 'root'
@@ -9,38 +11,71 @@ export class PanierService {
   // allzone(id: any) {
   //   throw new Error('Method not implemented.');
   // }
+  private urlz:string = "http://localhost:8000/api/zones"
+ 
+  private panier:Panier={
 
-  constructor() {
+    commandeburger:[],
+    commandemenu:[],
+    commandefrite:[],
+    commandetailleboisson:[],
+      
+  }
+  itemsSubject = new BehaviorSubject<Panier>(this.panier);
+  cart = new BehaviorSubject<Panier>(this.panier);
+  constructor(private http:HttpClient) {
     let existingCartItems = JSON.parse(localStorage.getItem('produit') || '[]' );
     // console.log(existingCartItems);
-    
-    if (!existingCartItems) {
+    if (!existingCartItems) { 
       existingCartItems = [];
     }
     this.itemsSubject.next(existingCartItems);
   }
-  private itemsSubject = new BehaviorSubject<any[]>([]);
+
+  addBurger(burgercommande:commandeburger){
+    let data={
+      ...this.cart.value,
+      commandeburger:this.cart.value.commandeburger?.concat(burgercommande)
+    }
+
+    // console.log(data);
+    return this.cart.next(data);
+    
+  }
+
+  commande(){
+    let commande=JSON.parse(localStorage.getItem('produit') || '[]' );
+    console.log(commande);
+    commande.forEach((element:any) => {
+      // if(element.nom=='menu complete'){
+      //   console.log(element);
+      // }
+      console.log(element);
+    });
+  }
+  
   items$:Observable<any> = this.itemsSubject.asObservable();
+  
+  
    private quantite=0
   
-  addToCart(product:any) {
+  addToCart(product:any){
     this.items$.pipe(
       take(1),
       map((products) => {
-        
-        
         if(!this.ExistProduit(products,product.id)){
          product.quantite=1;
           products.push(product);
          }
-         //else{
-        //   product.quantite=1
-        //   products.forEach((element:any) => {
-            
-        //       element.quantite +=1
-        //       
-        //   });
-        // }
+         else{
+          product.quantite=1
+          products.forEach((element:any) => {
+            if(element.id === product.id){
+              element.quantite +=1
+            }
+              
+          });
+        }
         localStorage.setItem('produit', JSON.stringify(products));
       }),
     ).subscribe();
@@ -52,6 +87,16 @@ export class PanierService {
      });
 
   }
+
+  allzone():Observable<Zone> {
+    return this.http.get<any>(this.urlz).pipe(
+      map(data=>{
+         let datas=data["hydra:member"]
+        return datas
+      }))
+    };
+
+
   delete(product:Menu | Produitd) {
     this.items$.pipe(
       take(1),
@@ -76,5 +121,6 @@ export class PanierService {
     )
     .subscribe();
   }
+  
 
 }

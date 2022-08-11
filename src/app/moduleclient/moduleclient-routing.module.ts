@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { InscriptionComponent } from '../inscriptions/inscription/inscription.component';
 import { LoginComponent } from '../login/login/login.component';
 import { DetailsComponent } from './page/details/details.component';
 
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'details/:id', component: DetailsComponent },
   { path: 'panier', component: PanierComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'inscription', component: InscriptionComponent }
   
 
 

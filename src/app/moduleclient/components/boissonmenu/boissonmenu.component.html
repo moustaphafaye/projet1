@@ -1,15 +1,17 @@
     <div   class="card m-2 bordere" >
         <div id="df" class="def-number-input number-input safari_only">
+            <input type="checkbox">
             <button  onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus ">-</button>
-            
             <input class="quantity text-center" min="1" name="quantity" value="{{menutai?.quantity}}"  type="number">
             <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus">+</button>
         </div>
-        
+       
         <ng-container *ngFor="let taille of menutai?.taille?.tailleboisson">
             <app-menutailles [tailleboisson]="taille" ></app-menutailles>
         </ng-container>
-        <h5>{{menutai?.taille?.libelle}}</h5>
-        <h5>{{menutai?.taille?.prix}}</h5>
+        
      </div>
     
+
+    <!--<h5>{{menutai?.taille?.libelle}}</h5>
+     <h5>{{menutai?.taille?.prix}}</h5>--> 
