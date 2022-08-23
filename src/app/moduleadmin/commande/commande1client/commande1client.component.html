@@ -1,0 +1,39 @@
+
+<!--{{zone$ |json}}-->
+<div style="margin-left:15em ;" class=" w-75 lass">
+    <table style="height: 30em;" class="table table-primary table table-striped table-hover " >
+         <thead>
+           <tr>
+             <th class="text-center" scope="col">#</th>
+             <th scope="col">N° Commande</th>
+             <th scope="col">Date</th>
+             <th scope="col">Etat</th>
+             <th scope="col">Montant</th>
+             <th scope="col">Quartier</th>
+             <th scope="col">Zone</th>
+             <th scope="col">Traiter Commande</th>
+           </tr>
+         </thead>
+         <tbody  class="" *ngFor="let item of zone$ | paginate: { itemsPerPage: 4, currentPage: p ,totalItems:total }">
+           <tr >
+             <th ><h5 class="m-4">{{item?.id}}</h5></th>
+             <td ><h5 class="m-4">{{item?.nCommande}}</h5></td>
+             <td > <h5 class="m-4">{{item?.date}}</h5>  </td>
+             <td> <h5 class="m-4">{{item?.etat}} </h5></td>
+             <td><h5 class="m-4">{{item?.montant}}  FCFA</h5></td>
+             <td>{{item?.quartier?.lebelle}}</td>    
+             <td ><h5 class="m-4">{{item?.zone?.nom}}</h5></td>
+             <td >
+                 <button class='btn btn-success m-2' >Modifier</button>
+                 <button class='btn btn-primary m-2' >Annuler</button>
+                 <button class='btn btn-danger m-2' >Supprimer</button>
+             </td>
+           </tr>
+         </tbody>
+         
+     </table>
+     <div>
+     <pagination-controls (pageChange)="p = $event"></pagination-controls>
+ 
+     </div>
+ </div>

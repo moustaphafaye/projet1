@@ -2,7 +2,7 @@
 <header class="head">
     <div class="header1">
         <div class=" my-2">
-            <input type="text" placeholder="Recherche">
+            <input type="text" [(ngModel)]="recherche" name="recherche" placeholder="Recherche">
         </div>
          <a (click)="infor('catalogue')" style="color: rgb(13, 12, 12);" class="text-decoration-none " ><h3>Catalogue</h3></a>
         <div class=" w-25 border border-2 d-flex justify-content-around  catalogue">
@@ -14,7 +14,7 @@
 <app-publicite></app-publicite>
 <div class="containers  ">
     <div  class="d-flex flex-wrap container mt-3 mb-3" >
-        <ng-container   *ngFor="let post of produits">
+        <ng-container   *ngFor="let post of produits | filter:recherche">
             <app-card [posts]="post"></app-card>
         </ng-container>
         

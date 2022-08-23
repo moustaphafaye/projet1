@@ -1,0 +1,31 @@
+
+<div class="container mt-4">
+    <div class="d-flex mt-4">
+        <!--<button class="btn btn-success  mt-4" >les livraisons en cours</button>-->
+    </div>
+    <h2 class="text-center mt-4">liste des Livraisons</h2>
+<table class="table mt-3 border border-3 ">
+    <thead>
+      <tr>
+          <th scope="col">N° Livraison</th>
+        <th scope="col">montant</th>
+        <th scope="col">Etat</th>
+        <th scope="col">Details</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let item of listcommande" >
+      <tr>
+        <th scope="row">{{item.N_livraison}}</th>
+        <td>{{item.montantTotal}}</td>
+        <td>{{item.etat}}</td>
+        <td>
+            <button class="btn btn-primary" (click)="commandeLivraison(item.id) "[routerLink]="['/moduleadmin/livraisons/',item.id,'commandes']">Détails</button>
+            <button class="btn btn-success" *ngIf="item.etat=='En cours'" (click)="livraisonUpdate(item.id,'Valider')">Valider</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+ 
+
+
+</div>

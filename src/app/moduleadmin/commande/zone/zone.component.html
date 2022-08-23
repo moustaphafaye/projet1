@@ -1,0 +1,35 @@
+
+
+<div class="container">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">nCommande</th>
+            <th scope="col">Montant</th>
+            <th scope="col">etat</th>
+            
+          </tr>
+        </thead>
+        <tbody *ngFor="let item of tableau">
+          <tr>
+            <th scope="row">1</th>
+            <td>{{item.nCommande}}</td>
+            <td>{{item.montant}} Fcfa</td>
+            <td>{{item.etat}}</td>
+            <input type="checkbox" (change)="selection(item,input)" #input name="zone[]" id="zone">
+          </tr>
+        </tbody>
+      </table>
+      <h3 cl>Choisir un livreur</h3>
+      <select class="form-select mt-4" aria-label="Default select example" #select (change)="selectionlivreur(select)">
+        <ng-container >
+        <option value="" ></option>
+        <option value="{{item.id}}" *ngFor="let item of tableaux">{{item.prenom}}</option>
+        
+    </ng-container>
+      </select>
+      <button class="btn btn-success mt-4" [disabled]="activerbuttonlivraison()"  (click)="ajouterlivraison();successMessage()"> Creer un livraison <i class="fa-solid fa-person-biking"></i></button>
+      
+</div>
+

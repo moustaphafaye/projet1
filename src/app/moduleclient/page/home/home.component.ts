@@ -13,6 +13,8 @@ import { Produit } from 'src/app/shared/models/produit';
 export class HomeComponent implements OnInit {
   posts : Catalogue|undefined=undefined; 
   produits: Produit[]|undefined=undefined 
+
+  recherche:any 
  
   constructor(private serv:ProduitService,public router: Router) { }
 

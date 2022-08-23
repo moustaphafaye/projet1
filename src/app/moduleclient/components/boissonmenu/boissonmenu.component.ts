@@ -35,4 +35,8 @@ export class BoissonmenuComponent implements OnInit {
   
   }
 
+  onAddBoissonMenu(){
+    alert("ok")
+  }
+
 }

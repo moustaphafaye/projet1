@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Route, Router } from '@angular/router';
 import { AuthentificationService } from 'src/app/shared/services/authentification.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { AuthentificationService } from 'src/app/shared/services/authentificatio
 })
 export class InscriptionComponent implements OnInit {
   insFormGroup : any
-  constructor(private auth:AuthentificationService) { }
+  constructor(private auth:AuthentificationService,private route: Router) { }
 
   ngOnInit(): void {
     this.insFormGroup=new FormGroup({
@@ -26,7 +27,9 @@ export class InscriptionComponent implements OnInit {
     console.log(this.insFormGroup.value)
       this.auth.utilisateur(this.insFormGroup.value).subscribe(
         data=>{console.log(data)
-          // localStorage.setItem('token', JSON.stringify(data));
+          this.route.navigate(['/moduleclient/login'])
+
+          //  localStorage.setItem('token', JSON.stringify(data.token));
         }, 
         
         err=>{console.log(err)})

@@ -7,11 +7,11 @@ import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { LayoutModule } from './layout/layout.module';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { LoginComponent } from './login/login/login.component';
 import { LoginModule } from './login/login.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,12 +26,15 @@ import { ReactiveFormsModule } from '@angular/forms';
     RouterModule,
     AppRoutingModule,
     LayoutModule,
-    
     LoginModule,
+    
+    FormsModule,
     HttpClientModule,
+    Ng2SearchPipeModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

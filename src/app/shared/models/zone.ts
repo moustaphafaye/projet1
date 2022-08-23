@@ -1,7 +1,23 @@
 
 
-
-
+export interface Izone{
+    id:number,
+    nom:string,
+    commande:Icommande[]
+}
+export interface Icommande{
+    id:number,
+    nCommande:string,
+    montant:number
+    etat:string
+}
+export interface Livreur{
+    id:number,
+    matriculeMoto:string,
+    telephone:number,
+    nom:string,
+    prenom:string
+}
 
 
 export interface Zone {

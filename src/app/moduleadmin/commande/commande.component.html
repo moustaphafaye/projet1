@@ -1,0 +1,80 @@
+<mat-toolbar>
+   
+    <button style="Width:20em; color:aliceblue" class="btn ">List Menu</button>
+    <button style="Width:20em ;color:aliceblue"  class="btn ">List Burger</button>
+    <button style="Width:20em; color:aliceblue" class="btn ">List Boisson</button>
+    <!--<button  *ngIf="sidenav.mode ==='over'" (click)="sidenav.toggle()">
+        <mat-icon *ngIf="!sidenav.opened">
+            menu 
+        </mat-icon>
+        <mat-icon *ngIf="sidenav.opened">
+            
+        </mat-icon>
+    </button>-->
+   <!-- <button routerLink="/moduleadmin">Commandes</button>-->
+</mat-toolbar>
+<mat-sidenav-container>
+    <mat-sidenav mode="over" opened>
+        <img style="width: 60%;height:10em" class="avatar mat-elevation-z8" src="assets/img/logoBurger.png" alt="">
+        <mat-divider></mat-divider>
+        <hr>
+        <div style="height: 5em;">
+        <button style="height: 3em;" mat-button class="menu-button" routerLink="/moduleadmin">
+            <mat-icon ><i  class="fa-solid fa-house"></i></mat-icon>
+            <span>Les commandes</span>
+        </button>
+        </div> 
+        <div style="height: 5em;">
+       <button style="height: 3em;" mat-button class="menu-button" routerLink="/moduleadmin/livraison" >
+        <mat-icon><i class="fa-solid fa-user"></i></mat-icon>
+        <span>Tous les livraisons</span>
+      </button> 
+    </div>
+    <div style="height: 5em;">
+      <button style="height: 3em;" mat-button class="menu-button" routerLink="/moduleadmin/livraisonencours">
+        <mat-icon><i class="fa-solid fa-building-wheat"></i></mat-icon>
+        <span>Les livraisons en cours</span>
+      </button> 
+    </div>
+    <hr>
+    <h4>Produit</h4>
+    <hr>
+    <div style="height: 5em;">
+        <button style="height: 3em;" mat-button class="menu-button" routerLink="/moduleadmin/menu">
+          <mat-icon><i class="fa-solid fa-arrows-rotate"></i></mat-icon>
+          <span>Ajouter Menu</span>
+        </button> 
+      </div>
+      <div style="height: 5em;">
+        <button style="height: 3em;" mat-button class="menu-button" routerLink="">
+          <mat-icon><i class="fa-solid fa-arrows-rotate"></i></mat-icon>
+          <span>Ajouter Burger</span>
+        </button> 
+      </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="content mat-elevation-z4">
+                <app-listcommande></app-listcommande> 
+                <ng-container *ngIf="router.url ==='/moduleadmin/zone/1'">
+                    <app-zone></app-zone>
+
+                </ng-container>
+                <ng-container *ngIf="router.url ==='/moduleadmin/zone/2'">
+                    <app-zone></app-zone>
+                </ng-container>
+                <ng-container *ngIf="router.url ==='/moduleadmin/zone/3'">
+                    <app-zone></app-zone>
+                </ng-container>
+                <ng-container *ngIf="router.url ==='/moduleadmin/livraison'">
+                    <app-listlivaison></app-listlivaison>
+                </ng-container>
+                <ng-container *ngIf="router.url ==='/moduleadmin/livraisonencours'">
+                    <app-listlivaisonencours></app-listlivaisonencours>
+                </ng-container>
+                <ng-container *ngIf="router.url ==='/moduleadmin/menu'">
+                    <app-menu></app-menu>
+                </ng-container>
+                
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

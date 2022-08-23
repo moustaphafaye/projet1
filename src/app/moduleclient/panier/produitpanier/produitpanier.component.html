@@ -22,11 +22,11 @@
                   </div>
   
                   <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-                    <button (click)="quantitePrice(item,quantity.value)"  class="btn btn-link px-2"  onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                    <button (click)="quantitePrice(item,quantity.value);sommetotal()"  class="btn btn-link px-2"  onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
                       <i class="fas fa-minus"></i>
                     </button>
                       <input id="form1" min="0" (change)="quantitePrice(item,quantity.value)" name="quantity" value="{{item.quantite}}" type="number" class="form-control form-control-sm" #quantity />
-                    <button (click)="quantitePrice(item,quantity.value)" class="btn btn-link px-2" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                    <button (click)="quantitePrice(item,quantity.value);sommetotal()" class="btn btn-link px-2" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
                        <i class="fas fa-plus"></i>
                     </button>
                   </div>
@@ -34,11 +34,14 @@
                     <h6 class="mb-0">{{item.prix * item.quantite}}   FCFA</h6>
                   </div>
                   <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                    <a class="text-muted"  (click)="supprimer(item);errorMessage()" ><i class="fas fa-times"></i ></a>
+                    <a class="text-muted"  (click)="supprimer(item);errorMessage();sommetotal()"><i  class="fa-solid fa-trash-can"></i></a>
                   </div>
                   <hr class="my-4" />
+                
+                  
                 </div>
-  
+               <ng-container *ngFor="let items of valeur$ |async">
+               </ng-container>
                 <!-- <hr class="my-4" /> -->
                 
   
@@ -58,12 +61,12 @@
               <div class="p-5">
                 <h3 class="fw-bold mb-5 mt-2 pt-1">Commande</h3>
                 <hr class="my-4" />
-  
+                
                 <div class="d-flex justify-content-between mb-4">
                   <h5 class="text-uppercase">Somme :</h5>
-                  <h5 class="text-success" *ngFor="let item of valeur$ |async">
-                    
-                    {{item.prix}} </h5>
+                  <h5 class="text-success">
+                    {{ prix}} FCFA
+                    </h5>
                  
                 </div>
                 <hr class="my-4" />
@@ -75,20 +78,18 @@
                     
                     
                     </div>
+                    <div>
                     <button (click)=" commande()"  id="surplace" class="btn btn-danger ">Sur place</button>
-  
+                  </div>
                 </div>
                 
                 <div id="zone" style="display:none" class="mb-4 pb-2 zone">
                   <h5>Choisir la zone de livraison</h5>
                   <select  class="select"multiple data-live-search="true"  >
                     <ng-container *ngFor="let iteme of zone$">
-                      <option value="2">{{iteme.nom}}   prix:{{iteme.prix}} fcfa
-                         
+                      <option value="2">{{iteme.nom}}   prix:{{iteme.prix}} fcfa   
                       </option>
                     </ng-container>
-                    
-                    
                   </select>
                  
                 </div>
@@ -107,11 +108,12 @@
                   <h5 class="text-uppercase">Total price</h5>
                   <h5>€ 137.00</h5>
                 </div>
-                   <a routerLink="/list">
-                <button type="button" (click)="validercommande()"  class="btn btn-dark btn-block btn-lg" data-mdb-ripple-color="dark" >
+                  
+          
+                <button type="button" (click)="commandeValide()"  class="btn btn-dark btn-block btn-lg" data-mdb-ripple-color="dark" >
                   Commander
                 </button>
-                </a>
+                
               </div>
             </div>
           </div>

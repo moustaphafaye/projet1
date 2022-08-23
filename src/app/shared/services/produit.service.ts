@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Catalogue } from '../models/catalogue';
 import { Produit } from '../models/produit';
 import { Complement } from '../models/complement';
-import { DetailMenu } from '../models/detailsMenu';
+
 import { Detail } from '../models/detail';
 
 @Injectable({
@@ -56,14 +56,15 @@ export class ProduitService {
 
 
 
-  getProduit=(id: number)=>  {
-    return this.http.get<Detail>(`${this.urld}/${id}`).pipe(
-      map(
-        data=>{
-          return data
-        }
-      )
-    )
+  getProduit=(id: number)=>{
+    return this.http.get<any>(`${this.urld}/${id}`)
+    // .pipe(
+    //   map(
+    //     data=>{
+    //       return data
+    //     }
+    //   )
+    // )
   }
   
 //   post$ = (id:number) => {

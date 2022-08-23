@@ -1,0 +1,80 @@
+
+<!--{{zone$ |json}}-->
+
+
+<div class="container">
+
+<div style=" " class=" w-75 lass">
+  <ng-container *ngIf="router.url ==='/moduleadmin'">
+    <div class="d-flex ">
+    <div style="width: 30%;" class="search-name   mt-3 mb-4 m-3">
+        <h4 style="color:black ;">Filtrer par Date</h4>
+        <input class="form-control" type="date" name="search" [(ngModel)]="searchText"  autocomplete="on" placeholder=" SEARCH  ">
+    </div>
+    <div style="width: 30%;" class="search-name  mt-3 mb-4">
+        <h4 style="color:black ;">Filtrer par Etat</h4>
+        <input class="form-control" type="text" [(ngModel)]="recherchecommande" name="searchetat"  autocomplete="on" placeholder=" SEARCH  ">
+    </div>
+    <div style="width: 30%;" class="search-name  mt-3 mb-4 m-3">
+      <h4 style="color:black ;">Filtrer par zone</h4>
+      <select [(ngModel)]="searchZone" class="form-select" aria-label="Default select example" name="" id="">
+        <option  >Zone A</option>
+        <option  >Zone B</option>
+        <option >Zone C</option>
+      </select>
+  </div>
+  <div id="livreur" style="width: 30%;display:none" class="search-name  mt-3 mb-4 m-3 ">
+    <h4 style="color:black ;">Choisir un livreur</h4>
+
+     <button class="btn btn-success"> livreur <i class="fa-solid fa-person-biking"></i></button>
+  </div>
+   </div>
+    <table  class="table table-striped border border-1" >
+         <thead>
+           <tr>
+            
+             <th scope="col">N° Commande</th>
+             <th scope="col">Date</th>
+             <th scope="col">Etat</th>
+             <th scope="col">Montant</th>
+             <th scope="col">Zone</th>
+             <th scope="col">clien</th>
+             <th scope="col">Traiter Commande</th>
+           </tr>
+         </thead>
+         <tbody  class="" *ngFor="let listcommande of listcommande | paginate: { itemsPerPage: 8, currentPage: p,totalItems:total } | filter:searchText | filter:recherchecommande | filter:searchZone ">
+           <tr >
+             
+             <td >{{listcommande?.nCommande}}</td>
+             <td > {{listcommande?.date}}  </td>
+             <td> {{listcommande?.etat}} </td>
+             <td>{{listcommande?.montant}}  FCFA</td>
+             
+             <td >{{listcommande?.zone?.nom}}</td>
+             <td>{{listcommande?.client?.prenom}} {{listcommande?.client?.nom}} </td>
+             <td class="btn btn-primary text-danger" >Details</td>
+             <td class="btn btn-danger" *ngIf="listcommande.etat=='Annuler'" (click)="commandeModifier(listcommande.id,'Valider')">valider </td>
+             <td class="btn btn-primary text-danger"  *ngIf="listcommande.etat=='Valider'" (click)="commandeModifier(listcommande.id,'Annuler')">Annuler</td>
+             <td class="btn btn-primary text-success"  *ngIf="listcommande.etat=='En cours'" (click)="commandeModifier(listcommande.id,'Valider')">Valider</td>
+             <input id="livreur" style="width: 2em;" (click)="livreur()" type="checkbox" value="">
+             <td></td>
+             
+             
+            </tr>
+         </tbody>
+         
+     </table>
+     <div>
+     <pagination-controls (pageChange)="p = $event"></pagination-controls>
+ 
+     </div></ng-container>
+    <!-- <ng-container *ngIf="router.url ==='/moduleadmin/zone/'">
+        <app-zone></app-zone>
+     </ng-container>-->
+     <ng-container *ngIf="router.url==='/moduleadmin'" >
+     <button class="btn btn-primary" [routerLink]="['/moduleadmin/zone/',item.id]" *ngFor="let item of tableau">
+        {{item?.nom}}
+     </button>
+    </ng-container>
+ </div>
+</div>

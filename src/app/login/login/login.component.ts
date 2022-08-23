@@ -1,6 +1,7 @@
 import { Token } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup , Validators} from '@angular/forms';
+import { Router } from '@angular/router';
 import { connect } from 'rxjs';
 import { AuthentificationService } from 'src/app/shared/services/authentification.service';
 
@@ -12,7 +13,7 @@ import { AuthentificationService } from 'src/app/shared/services/authentificatio
 export class LoginComponent implements OnInit {
 
   userFormGroup : any ;
-  constructor(private auth:AuthentificationService) { }
+  constructor(private auth:AuthentificationService,private router: Router) { }
 
   ngOnInit(): void {
     this.userFormGroup=new FormGroup({
@@ -21,10 +22,25 @@ export class LoginComponent implements OnInit {
     })
   }
   handerlogin(){
-    console.log(this.userFormGroup.value)
+    // console.log(this.userFormGroup.value)
       this.auth.connexion(this.userFormGroup.value).subscribe(
-        data=>{console.log(data)
-          localStorage.setItem('token', JSON.stringify(data));
+        data=>{
+          const letoken=this.auth.getDecodedAccessToken(data.token)
+          console.log(letoken);
+            if(letoken.roles[0]==='ROLE_GESTIONNAIRE'){
+              this.router.navigate(['/moduleadmin'])
+            }else{
+              
+              this.router.navigate(['/moduleclient/panier'])
+
+            }
+          
+          // if(data){
+              
+          //     this.router.navigate(['/moduleclient/panier'])
+          
+          // }
+          localStorage.setItem('token',data.token);
         }, 
         
         err=>{console.log(err)})

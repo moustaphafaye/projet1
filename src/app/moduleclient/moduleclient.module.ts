@@ -24,6 +24,15 @@ import { MenutaillesComponent } from './components/menutailles/menutailles.compo
 import { LoginComponent } from '../login/login/login.component';
 import { LoginModule } from '../login/login.module';
 import { InscriptionsModule } from '../inscriptions/inscriptions.module';
+import { CommandeComponent } from './page/commande/commande.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { FormsModule } from '@angular/forms';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 
@@ -43,16 +52,25 @@ import { InscriptionsModule } from '../inscriptions/inscriptions.module';
     BoissonComponent,
     BoissonmenuComponent,
     MenutailComponent,
-    MenutaillesComponent
+    MenutaillesComponent,
+    CommandeComponent
   ],
   imports: [
     CommonModule,
     ModuleclientRoutingModule,
     LayoutModule,
     RouterModule,
+    FormsModule,
     LoginModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatButtonModule,
+    MatIconModule,
+    MatDividerModule,
+    Ng2SearchPipeModule,
     InscriptionsModule,
     PanierModule,
+    NgxPaginationModule,
   ],exports:[
     CardComponent
   ]

@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { burgermenu } from 'src/app/shared/models/detail';
-import { DetailMenu } from 'src/app/shared/models/detailsMenu';
+
 
 @Component({
   selector: 'app-autreprodui',

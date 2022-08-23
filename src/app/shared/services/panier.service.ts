@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, map ,Observable,take,find} from 'rxjs';
 import { Menu, Produitd } from '../models/detail';
 import { commandeburger, Panier } from '../models/panier';
+import { Panier1 } from '../models/Panier1';
+import { Produit } from '../models/produit';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +13,7 @@ export class PanierService {
   // allzone(id: any) {
   //   throw new Error('Method not implemented.');
   // }
-  private urlz:string = "http://localhost:8000/api/zones"
+  private urlz:string = "http://localhost:8000/api/zones/"
  
   private panier:Panier={
 
@@ -96,6 +98,10 @@ export class PanierService {
       }))
     };
 
+    zone(id:number):Observable<any> {
+      return this.http.get<any>(this.urlz+id)
+        
+      };
 
   delete(product:Menu | Produitd) {
     this.items$.pipe(
@@ -121,6 +127,38 @@ export class PanierService {
     )
     .subscribe();
   }
+
+  kony(){
+    let tab=0
+    this.items$.pipe(
+      map((products) => {
+
+        products.forEach((el:any) =>{
+          tab+=(el.prix * el.quantite)
+        });
+        localStorage.setItem('produit', JSON.stringify(products));
+      })
+    )
+    .subscribe();
+    return tab
+  }
+  paniers:BehaviorSubject<Panier1>= new BehaviorSubject<Panier1>({
+    menus:[],
+    burgers:[],
+    boissons:[],
+    frites:[]
+  })
+
+  addPanier(product:Produitd|Menu){
+    if(product.type=="menu"){
+      this.paniers.value.menus.push(product as Menu )
+    }else{
+      this.paniers.value.burgers.push(product as Produitd )
+    }
+       
+  }
+
   
 
 }
+

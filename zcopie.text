@@ -1,283 +1,42 @@
-<app-publicite></app-publicite>
-<app-produit></app-produit>
-
-
-
-
-
-<ng-container *ngFor="let post of posts$|async">
-                    <app-card [posts]="post"></app-card>
-                </ng-container> 
-
-
-
-
-<div class=" details ">
-    <div class="detail container">
-        <div id="p1">
-            <div class="image W-25">
-                <img src="assets/img/b6.png" alt="">
-            </div>
-            <div class="desc">
-            <h3>Nom :  </h3>
-            <h3>Prix : 1500 FCFA</h3>
-            <h3>Description :</h3>
-            <p></p>
-
-            </div>
-        </div>
-        <div id="p2">
-            <div>
-                <button style="background-color:#5C3737;" type="button" class="btn ">Ajouter dans le panier <i class="fa-solid fa-cart-shopping"></i></button>
-            </div>
-            
+<ng-container *ngIf="detailProduit.produit['@type']=='Menu'">
+      <div  class="c  border border-2 ">
+    
+         <!-- <app-tailleboi *ngIf="(details?.menu?.menuportionfriet) as frit" [menufritee]="frit"></app-tailleboi>-->
+                    
+         <ng-container *ngFor="let frit of detailProduit.produit.menuportionfriet">
+          <div id="cvd" class="card m-2 bg-red" >
+              <h5></h5>
+              <img id="image" style="width: 10em;"  src="data:image/png;base64,{{frit.portionFrite.image}}" class="card-img-top" alt="..cc.">
+          </div>
+        </ng-container>
+      </div>
+    </ng-container>
+      <div  >
+        <ng-container *ngIf="detailProduit.produit['@type']=='Menu'" >
+          <div   class="cc d-flex justify-content-around flex-wrap  border border-2" >
+            <ng-container *ngFor="let menutai of detailProduit.produit.menutaille">
           
-        </div>
-    </div>
-    <app-autreprodui></app-autreprodui>
-</div>
+              <div   class="card m-2 bordere" >
+                {{menutai?.taille.libelle}}
+                <div id="df" class="def-number-input number-input safari_only" *ngFor="let taile of menutai.taille.tailleboisson">
+                  
+                  <img class="image" style="height: 6em;" src="data:image/png;base64,{{taile.boisson.image}}" class="card-img-top" alt="...">
+                  <h4 class="text-center"></h4>
+                    <input #boisson type="checkbox" (change)="onAddBoissonMenu(boisson)" >
+                    <button  onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus ">-</button>
+                    <input class="quantity text-center" min="1" name="quantity" value="{{menutai?.quantity}}" readonly  type="number">
+                    <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus">+</button>
+                    <hr>
+                </div>
+                <!--<ng-container *ngFor="let taille of menutai?.taille?.tailleboisson">
+                    <app-menutailles [tailleboisson]="taille" ></app-menutailles>
+                </ng-container>-->
+             </div>
+             <!-- <app-boissonmenu [menutai]="menutai"></app-boissonmenu>-->
 
-
-
-
-
-
-
-*ngIf="prod?.type=='menu'"
-
-
-
-
-
-
-
-
-
-
-
-
-this.posts$ = this.serv.all();
-
-
-<footer class="text-center text-white mt-5" style="background-color: #caced1;">
-    <!-- Grid container -->
-    <div class="container p-4">
-      <!-- Section: Images -->
-      <section class="">
-        <div class="row">
-          <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-            <div
-              class="bg-image hover-overlay ripple shadow-1-strong rounded"
-              data-ripple-color="light"
-            >
-              <img
-                src="https://mdbcdn.b-cdn.net/img/new/fluid/city/113.webp"
-                class="w-100"
-              />
-              <a href="#!">
-                <div
-                  class="mask"
-                  style="background-color: rgba(251, 251, 251, 0.2);"
-                ></div>
-              </a>
-            </div>
+              
+              </ng-container>
           </div>
-          <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-            <div
-              class="bg-image hover-overlay ripple shadow-1-strong rounded"
-              data-ripple-color="light"
-            >
-              <img
-                src="https://mdbcdn.b-cdn.net/img/new/fluid/city/111.webp"
-                class="w-100"
-              />
-              <a href="#!">
-                <div
-                  class="mask"
-                  style="background-color: rgba(251, 251, 251, 0.2);"
-                ></div>
-              </a>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-            <div
-              class="bg-image hover-overlay ripple shadow-1-strong rounded"
-              data-ripple-color="light"
-            >
-              <img
-                src="https://mdbcdn.b-cdn.net/img/new/fluid/city/112.webp"
-                class="w-100"
-              />
-              <a href="#!">
-                <div
-                  class="mask"
-                  style="background-color: rgba(251, 251, 251, 0.2);"
-                ></div>
-              </a>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-            <div
-              class="bg-image hover-overlay ripple shadow-1-strong rounded"
-              data-ripple-color="light"
-            >
-              <img
-                src="https://mdbcdn.b-cdn.net/img/new/fluid/city/114.webp"
-                class="w-100"
-              />
-              <a href="#!">
-                <div
-                  class="mask"
-                  style="background-color: rgba(251, 251, 251, 0.2);"
-                ></div>
-              </a>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-            <div
-              class="bg-image hover-overlay ripple shadow-1-strong rounded"
-              data-ripple-color="light"
-            >
-              <img
-                src="https://mdbcdn.b-cdn.net/img/new/fluid/city/115.webp"
-                class="w-100"
-              />
-              <a href="#!">
-                <div
-                  class="mask"
-                  style="background-color: rgba(251, 251, 251, 0.2);"
-                ></div>
-              </a>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-            <div
-              class="bg-image hover-overlay ripple shadow-1-strong rounded"
-              data-ripple-color="light"
-            >
-              <img
-                src="https://mdbcdn.b-cdn.net/img/new/fluid/city/116.webp"
-                class="w-100"
-              />
-              <a href="#!">
-                <div
-                  class="mask"
-                  style="background-color: rgba(251, 251, 251, 0.2);"
-                ></div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Section: Images -->
-    </div>
-    <!-- Grid container -->
-  
-    <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-      © 2020 Copyright:
-      <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-    </div>
-    <!-- Copyright -->
-  </footer>
-
-const id:number=+this.route.snapshot.params['id'];
-    this.serv.getProduit(id).subscribe(
-      data=>{
-        this.details=data;
-        console.log(this.details);
-      }
-    )
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class=" details ">
-    <div class="details container">
-        <div id="p1">
-            <div class="card" style="width: 18rem; height:30em">
-                <img class="card-img-top" src="assets/img/b6.png" alt="Card image cap">
-              </div>
-            <div style="overflow-y: scroll;" class="desc">
-                <table style="height: 10em;" class="table table-striped border ">
-                    <thead>
-                      <tr>
         
-                        <th scope="col">Image</th>
-                        <th scope="col">NomProduit</th>
-                        <th scope="col">Quantite</th>
-                        <th scope="col">Prix Unitaire</th>
-                        <th scope="col">Prix Total</th>
-                        <th scope="col">Action</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr >
-                        
-                        <th class="border border-right-3 d-flex justify-content-center" scope="row text-center"><img class="  " style="height: 5em; width:6em" src="assets/img/b6.png" alt=""></th>
-                        <td >Burger Royal</td>
-                        <td><a class="">-</a> 2 <a class="">+</a></td>
-                        <td>1000</td>
-                        <td>2000</td>
-                        <td>details</td>
-                      </tr>
-                      <tr>
-                        
-                        <th class="border border-right-3 d-flex justify-content-center" scope="row"><img class="" style="height: 5em; width:6em " src="assets/img/b6.png" alt=""></th>
-                        <td class="">Burger simple</td>
-                        <td></td>
-                        <td>1000</td>
-                        <td>4000</td>
-                        <td>details</td>
-        
-                      </tr>
-                      <tr>
-                        
-                        <th class="border border-right-3 d-flex justify-content-center" scope="row"><img class="" style="height: 5em; width:6em " src="assets/img/b6.png" alt=""></th>
-                        <td class="">Burger simple</td>
-                        <td></td>
-                        <td>1000</td>
-                        <td>4000</td>
-                        <td>details</td>
-        
-                      </tr>
-                      <tr>
-                        
-                        <th class="border border-right-3 d-flex justify-content-center" scope="row"><img class="" style="height: 5em; width:6em " src="assets/img/b6.png" alt=""></th>
-                        <td class="">Burger simple</td>
-                        <td>
-                            <div id="df" class="def-number-input number-input safari_only">
-                                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus ">-</button>
-                                <input class="quantity" min="0" name="quantity" value="1" type="number">
-                                <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus">+</button>
-                            </div>
-                            
-                        </td>
-                        <td>1000</td>
-                        <td>4000</td>
-                        <td>details</td>
-        
-                      </tr>
-                      
-                    </tbody>
-                </table>    
-            
-        </div>
-        <div id="p2">
-            <div>
-                <button style="background-color:#5C3737;" type="button" class="btn ">Ajouter dans le panier <i class="fa-solid fa-cart-shopping"></i></button>
-            </div>
-            
-          
-        </div>
-    </div>
-    <app-autreprodui></app-autreprodui>
-</div>
+        </ng-container>
+      </div>

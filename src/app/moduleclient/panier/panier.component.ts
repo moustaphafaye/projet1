@@ -20,7 +20,7 @@ export class PanierComponent implements OnInit {
   ngOnInit(): void {
   this.value=this.panier.items$
   // this.valeur=this.zone.allzone
-  // console.log(this.value)
+   console.log(this.value)
   }
 
 }

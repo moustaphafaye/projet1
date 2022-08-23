@@ -1,6 +1,56 @@
 // import { Menuburg } from "./menuburg";
 // import { Produit } from "./produit"
 
+// import { Produit } from "./produit";
+
+export interface DetailsProduit{
+    produit: Produit
+    boissons: Produit[]
+    portions: Produit[]
+    details: Produit[]
+}
+
+export interface Produit {
+    id?:number
+    image:Blob
+    nom:string
+    prix:number
+    quantite?:number
+    description?:string
+    '@type':string
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 export interface Detail {
 
@@ -18,7 +68,9 @@ export interface Produitd {
     quantite?:number
     prix?:number
     description:string
-    type?:string
+    type?:string,
+    boissonTaille?:number
+  
 }
 export interface TailleBoisson{
     id?:number
@@ -44,6 +96,7 @@ export interface Menu {
     menuburger?:burgermenu[]
     menuportionfriet?:menufrite[]
     menutaille?:menutail[]
+    boisson?:Produitd
 }
 
 export interface menufrite{
